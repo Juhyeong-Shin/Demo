@@ -14,6 +14,7 @@ public class HelloWorldController {
 
     @Autowired
     private MessageSource messageSource;
+
     //Get
     // /hello-world(endpoint)
     @GetMapping(path = "/hello-World")
@@ -31,8 +32,8 @@ public class HelloWorldController {
         return new HelloWorldBean (String.format("Hello World, %s",name));
     }   //format = 2가지 매개변수 1문자형태 %s 가변데이터 저장하겠다.
 
-    @GetMapping(path = "/hello-world-interationalized")
+    @GetMapping(path = "/hello-world-internationalized")
     public String helloWorldInternationalized(@RequestHeader(name="Accept-Language", required = false) Locale locale) {
-    return messageSource.getMessage("",null,locale);
+    return messageSource.getMessage("greeting.message",null, locale);
     }
 }

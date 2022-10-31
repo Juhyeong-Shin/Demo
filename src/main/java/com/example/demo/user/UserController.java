@@ -20,6 +20,7 @@ public class UserController {
     public List<User> retrieveAllUsers(){   //전체 사용자 검색
         return service.findAll();
     }
+
     //get / users / 1 or / users/10
     @GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable int id){

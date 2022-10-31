@@ -1,6 +1,9 @@
 package com.example.demo.user;
 
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,6 +14,8 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
+//@JsonIgnoreProperties(value = {"password","ssn"})
+@JsonFilter("UserInfo")
 public class User {
     private Integer id;
 
@@ -19,4 +24,8 @@ public class User {
 
     @Past   //현재회원이 가입한 날짜를 과거데이터만 가능한 제약조건
     private Date joinDate;
+
+
+    private String password;
+    private String ssn;
 }

@@ -14,9 +14,9 @@ public class UserDaoService {
     private static int usersCount = 3;
 
     static {
-        users.add(new User(1, "add", new Date()));
-        users.add(new User(2, "ken", new Date()));
-        users.add(new User(3, "minnal", new Date()));
+        users.add(new User(1, "add", new Date(),"pass1","1234"));
+        users.add(new User(2, "ken", new Date(),"pass1","1234"));
+        users.add(new User(3, "minnal", new Date(),"pass1","1234"));
     }
 
     public List<User> findAll() {   //전체사용자 조희
